@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'i.css' %}">
+    <title>AIChat</title>
+</head>
+<body>
+
+    <header>
+        <button id="sideappear" onclick="showsidebar()"><svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#b4b4b4"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 5V19M6 8H8M6 11H8M6 14H8M6.2 19H17.8C18.9201 19 19.4802 19 19.908 18.782C20.2843 18.5903 20.5903 18.2843 20.782 17.908C21 17.4802 21 16.9201 21 15.8V8.2C21 7.0799 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V15.8C3 16.9201 3 17.4802 3.21799 17.908C3.40973 18.2843 3.71569 18.5903 4.09202 18.782C4.51984 19 5.07989 19 6.2 19Z" stroke="#b4b4b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        <button id="newonechat" onclick="newchat()"><svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" id="create-note" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M20,4a2.09,2.09,0,0,0-2.95.12L10.17,11,9,15l4-1.17L19.88,7A2.09,2.09,0,0,0,20,4Z" style="fill: none; stroke: #b4b4b4; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary" d="M12,3H4A1,1,0,0,0,3,4V20a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V12" style="fill: none; stroke: #b4b4b4; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></g></svg></button>
+        <h3>AiChat</h3>
+    </header>
+
+    <div id="headsection">
+        <button id="sideappearh" onclick="showsidebar()"><svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#b4b4b4"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H14M4 18H9" stroke="#b4b4b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        <h3>AiChat</h3>
+        <button id="newonechat" onclick="newchat()"><svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" id="create-note" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M20,4a2.09,2.09,0,0,0-2.95.12L10.17,11,9,15l4-1.17L19.88,7A2.09,2.09,0,0,0,20,4Z" style="fill: none; stroke: #b4b4b4; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary" d="M12,3H4A1,1,0,0,0,3,4V20a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V12" style="fill: none; stroke: #b4b4b4; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></g></svg></button>
+    </div>
+
+    <div id="sidebar">
+
+        <div id="sidebarbuttons">
+
+        <button id="sideappearh" onclick="hidesidebar()"><svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#b4b4b4"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H14M4 18H9" stroke="#b4b4b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        <button id="sideappear" onclick="hidesidebar()"><svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#b4b4b4"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 5V19M6 8H8M6 11H8M6 14H8M6.2 19H17.8C18.9201 19 19.4802 19 19.908 18.782C20.2843 18.5903 20.5903 18.2843 20.782 17.908C21 17.4802 21 16.9201 21 15.8V8.2C21 7.0799 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V15.8C3 16.9201 3 17.4802 3.21799 17.908C3.40973 18.2843 3.71569 18.5903 4.09202 18.782C4.51984 19 5.07989 19 6.2 19Z" stroke="#b4b4b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        <button id="newonechat" onclick="newchat()"><svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" id="create-note" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M20,4a2.09,2.09,0,0,0-2.95.12L10.17,11,9,15l4-1.17L19.88,7A2.09,2.09,0,0,0,20,4Z" style="fill: none; stroke: #b4b4b4; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary" d="M12,3H4A1,1,0,0,0,3,4V20a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V12" style="fill: none; stroke: #b4b4b4; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></g></svg></button>
+
+        </div>
+
+        <button id="newchat" onclick="newchat()">New chat</button>
+        <div id="innersidebar">
+        {%if chatids%}
+        {% for chat in chatids%}
+        <button id="historychat" onclick='sendid({{chat.chat_id}})'>{{chat.title}}...</button>
+        {% endfor %}
+        {% else %}
+        <h3 id="No_history">No Chat History</h3>
+        {% endif %}
+        </div>
+    </div>
+
+    <div id="chatarea">
+        <div id="chatcontent">
+            <h3 id="starting">How Can I Help You ?</h3>
+            <div id="examples">
+                {% for key,value in prompts.items %}
+                <p id="p{{key}}">{{value}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div id="chatsection">
+        <div id="innerchatsection">
+            <textarea id="msg" tabindex="0" name="msg" dir="auto" rows="1" placeholder="Message"></textarea>
+            <button id="send" onclick="senddata()"><p id="sendp">Send</p></button>
+        </div>
+    </div>
+
+    <script src="{% static 'send.js' %}"></script>
+</body>
+</html>
